@@ -46,7 +46,8 @@ The Redis Ansible role was executed successfully on the Ubuntu operating system.
 
 ### Ubuntu Installation Screenshot
 
-![Ubuntu Redis Installation](screenshots/ubuntu-installation.png)
+<img width="1440" height="900" alt="Screenshot 2026-09-01 at 2 28 02 PM" src="https://github.com/user-attachments/assets/3a9cd408-662a-4441-abce-c12f9635b37d" />
+
 
 ---
 
