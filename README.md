@@ -56,5 +56,8 @@ The Redis Ansible role was also executed successfully on the RedHat operating sy
 
 ### RedHat Installation Screenshot
 
-![RedHat Redis Installation](screenshots/redhat-installation.png)
+<img width="1440" height="900" alt="Screenshot 2026-09-01 at 2 16 17 PM" src="https://github.com/user-attachments/assets/5cbe0eb1-589d-4b7b-ada5-be48c4838712" />
+
+
+
 
