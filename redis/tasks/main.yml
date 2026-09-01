@@ -1,0 +1,26 @@
+---
+- name: Set Redis variables based on OS
+  ansible.builtin.set_fact:
+    redis_package_name: "{{ redis_os_packages[ansible_facts.distribution]['package'] }}"
+    redis_service_name: "{{ redis_os_packages[ansible_facts.distribution]['service'] }}"
+    redis_config_file: "{{ redis_os_packages[ansible_facts.distribution]['config'] }}"
+
+- name: Install Redis
+  ansible.builtin.package:
+    name: "{{ redis_package_name }}-{{ redis_version }}"
+    state: present
+
+- name: Configure Redis
+  ansible.builtin.template:
+    src: redis.conf.j2
+    dest: "{{ redis_config_file }}"
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart Redis
+
+- name: Enable and start Redis
+  ansible.builtin.service:
+    name: "{{ redis_service_name }}"
+    state: started
+    enabled: true

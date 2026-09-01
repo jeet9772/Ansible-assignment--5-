@@ -1,0 +1,16 @@
+---
+redis_os_packages:
+  RedHat:
+    package: redis
+    service: redis
+    config: /etc/redis/redis.conf
+
+  CentOS:
+    package: redis
+    service: redis
+    config: /etc/redis/redis.conf
+
+  Ubuntu:
+    package: redis-server
+    service: redis-server
+    config: /etc/redis/redis.conf
