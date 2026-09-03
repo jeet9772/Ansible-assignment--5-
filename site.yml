@@ -1,5 +1,9 @@
 ---
-- hosts: all
-  become: yes
+- name: Deploy Redis
+  hosts: "{{ target_hosts | default('all') }}"
+  become: true
+
   roles:
     - redis
+      
+
