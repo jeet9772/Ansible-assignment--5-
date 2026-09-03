@@ -46,7 +46,8 @@ The Redis Ansible role was executed successfully on the Ubuntu operating system.
 
 ### Ubuntu Installation Screenshot
 
-<img width="1440" height="900" alt="Screenshot 2026-09-01 at 2 28 02 PM" src="https://github.com/user-attachments/assets/3a9cd408-662a-4441-abce-c12f9635b37d" />
+<img width="1440" height="900" alt="Screenshot 2026-09-03 at 1 51 26 PM" src="https://github.com/user-attachments/assets/cf785daf-4387-475f-afc9-8534724b70df" />
+
 
 
 ---
@@ -57,7 +58,8 @@ The Redis Ansible role was also executed successfully on the RedHat operating sy
 
 ### RedHat Installation Screenshot
 
-<img width="1440" height="900" alt="Screenshot 2026-09-01 at 2 16 17 PM" src="https://github.com/user-attachments/assets/5cbe0eb1-589d-4b7b-ada5-be48c4838712" />
+<img width="1440" height="900" alt="Screenshot 2026-09-03 at 1 49 39 PM" src="https://github.com/user-attachments/assets/5787cbf8-d8ad-4c2f-adad-abb2ab38b3ce" />
+
 
 
 
