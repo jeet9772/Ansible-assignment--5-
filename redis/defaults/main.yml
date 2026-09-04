@@ -1,11 +1,7 @@
 ---
-redis_version: "6.2.22-1.el9_8"
-
+redis_version: "6.2.22"
 redis_port: 6379
 redis_bind: "127.0.0.1"
-redis_protected_mode: "yes"
-
 redis_maxmemory: "256mb"
 redis_maxmemory_policy: "allkeys-lru"
-
-redis_appendonly: "yes"
+~                                   
