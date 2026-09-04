@@ -1,19 +1,21 @@
 ---
-- name: Set Redis variables based on OS
-  ansible.builtin.set_fact:
-    redis_package_name: "{{ redis_os_packages[ansible_facts.distribution]['package'] }}"
-    redis_service_name: "{{ redis_os_packages[ansible_facts.distribution]['service'] }}"
-    redis_config_file: "{{ redis_os_packages[ansible_facts.distribution]['config'] }}"
-
-- name: Install Redis
-  ansible.builtin.package:
-    name: "{{ redis_package_name }}-{{ redis_version }}"
+- name: Install specific Redis version on RedHat
+  ansible.builtin.dnf:
+    name: "redis-{{ redis_version }}-1.el9_8"
     state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Install Redis on Ubuntu
+  ansible.builtin.apt:
+    name: "{{ redis_packages[ansible_os_family][0] }}"
+    state: present
+    update_cache: true
+  when: ansible_os_family == "Debian"
 
 - name: Configure Redis
   ansible.builtin.template:
     src: redis.conf.j2
-    dest: "{{ redis_config_file }}"
+    dest: "{{ redis_config_paths[ansible_os_family] }}"
     owner: root
     group: root
     mode: "0644"
@@ -21,6 +23,6 @@
 
 - name: Enable and start Redis
   ansible.builtin.service:
-    name: "{{ redis_service_name }}"
+    name: "{{ redis_services[ansible_os_family] }}"
     state: started
     enabled: true
